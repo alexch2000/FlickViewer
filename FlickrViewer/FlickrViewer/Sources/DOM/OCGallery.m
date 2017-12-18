@@ -7,6 +7,7 @@
 //
 
 #import "OCGallery.h"
+#import "OCPhoto.h"
 
 @implementation OCGallery
 
@@ -15,6 +16,18 @@
         _appendedPhotos = [photosArray copy];
         _photos = [_photos ?: @[] arrayByAddingObjectsFromArray:photosArray];
     }
+}
+
+- (void)updateWithJSON:(id)jsonDictionary {
+    self.pagesCount = [jsonDictionary[@"pages"] integerValue];
+    self.currentPage = [jsonDictionary[@"currentPage"] integerValue];
+    
+    NSMutableArray *photos = [NSMutableArray new];
+    for (id dictionary in jsonDictionary[@"photo"]) {
+        [photos addObject:[[OCPhoto alloc] initWithJSON:dictionary]];
+    }
+    
+    [self appendPhotos:photos];
 }
 
 @end

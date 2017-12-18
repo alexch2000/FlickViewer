@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, nullable) NSArray <OCPhoto *> * appendedPhotos;
 - (void)appendPhotos:(NSArray <OCPhoto*> * _Nullable )photosArray;
 
+- (void)updateWithJSON:(id)jsonDictionary; // Updating with Flickr API JSON. Should be moved out to initializer
+
 @end
 
 NS_ASSUME_NONNULL_END

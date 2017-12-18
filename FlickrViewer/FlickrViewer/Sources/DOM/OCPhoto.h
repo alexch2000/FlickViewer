@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OCPhotoViewModel.h"
 
-@interface OCPhoto : NSObject
+NS_ASSUME_NONNULL_BEGIN
+
+@interface OCPhoto : NSObject <OCPhotoViewModel>
 
 - (instancetype)initWithJSON:(id)photoJSON;
 
@@ -18,3 +21,5 @@
 @property (nonatomic, readonly) NSString *secret;
 
 @end
+
+NS_ASSUME_NONNULL_END

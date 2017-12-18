@@ -22,4 +22,10 @@
     return self;
 }
 
+- (NSURL *)photoURL {
+    NSString *resultURL = [NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/%@_%@.jpg", self.farm, self.server, self.identifier, self.secret];
+    
+    return [NSURL URLWithString:resultURL];
+}
+
 @end
