@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		178B53D51FE83E71003469E6 /* OCFlickrService.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53D41FE83E71003469E6 /* OCFlickrService.m */; };
+		178B53D81FE83EAB003469E6 /* OCFlickrServiceConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53D71FE83EAB003469E6 /* OCFlickrServiceConfiguration.m */; };
+		178B53DC1FE83EF1003469E6 /* OCAsyncCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53DB1FE83EF1003469E6 /* OCAsyncCall.m */; };
+		178B53E01FE84015003469E6 /* OCFlickrRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53DF1FE84015003469E6 /* OCFlickrRequest.m */; };
 		17FF487E1FE83CBC00193184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17FF48741FE83CBC00193184 /* Assets.xcassets */; };
 		17FF487F1FE83CBC00193184 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FF48751FE83CBC00193184 /* LaunchScreen.storyboard */; };
 		17FF48801FE83CBC00193184 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FF48771FE83CBC00193184 /* Main.storyboard */; };
@@ -15,6 +19,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		178B53D31FE83E71003469E6 /* OCFlickrService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCFlickrService.h; sourceTree = "<group>"; };
+		178B53D41FE83E71003469E6 /* OCFlickrService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCFlickrService.m; sourceTree = "<group>"; };
+		178B53D61FE83EAB003469E6 /* OCFlickrServiceConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCFlickrServiceConfiguration.h; sourceTree = "<group>"; };
+		178B53D71FE83EAB003469E6 /* OCFlickrServiceConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCFlickrServiceConfiguration.m; sourceTree = "<group>"; };
+		178B53DA1FE83EF1003469E6 /* OCAsyncCall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCAsyncCall.h; sourceTree = "<group>"; };
+		178B53DB1FE83EF1003469E6 /* OCAsyncCall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCAsyncCall.m; sourceTree = "<group>"; };
+		178B53DE1FE84015003469E6 /* OCFlickrRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCFlickrRequest.h; sourceTree = "<group>"; };
+		178B53DF1FE84015003469E6 /* OCFlickrRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCFlickrRequest.m; sourceTree = "<group>"; };
 		17FF485A1FE83C2200193184 /* FlickrViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FF486B1FE83C2200193184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17FF48741FE83CBC00193184 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +48,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		178B53D11FE83E50003469E6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				178B53DD1FE8400A003469E6 /* Requests */,
+				178B53D91FE83EE6003469E6 /* AsyncCall */,
+				178B53D21FE83E50003469E6 /* Service */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		178B53D21FE83E50003469E6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				178B53D31FE83E71003469E6 /* OCFlickrService.h */,
+				178B53D41FE83E71003469E6 /* OCFlickrService.m */,
+				178B53D61FE83EAB003469E6 /* OCFlickrServiceConfiguration.h */,
+				178B53D71FE83EAB003469E6 /* OCFlickrServiceConfiguration.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		178B53D91FE83EE6003469E6 /* AsyncCall */ = {
+			isa = PBXGroup;
+			children = (
+				178B53DA1FE83EF1003469E6 /* OCAsyncCall.h */,
+				178B53DB1FE83EF1003469E6 /* OCAsyncCall.m */,
+			);
+			path = AsyncCall;
+			sourceTree = "<group>";
+		};
+		178B53DD1FE8400A003469E6 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				178B53DE1FE84015003469E6 /* OCFlickrRequest.h */,
+				178B53DF1FE84015003469E6 /* OCFlickrRequest.m */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
 		17FF48511FE83C2200193184 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +126,7 @@
 		17FF48791FE83CBC00193184 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				178B53D11FE83E50003469E6 /* Networking */,
 				17FF487A1FE83CBC00193184 /* Application */,
 			);
 			path = Sources;
@@ -161,8 +213,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178B53D51FE83E71003469E6 /* OCFlickrService.m in Sources */,
+				178B53DC1FE83EF1003469E6 /* OCAsyncCall.m in Sources */,
 				17FF48821FE83CBC00193184 /* AppDelegate.m in Sources */,
 				17FF48811FE83CBC00193184 /* main.m in Sources */,
+				178B53E01FE84015003469E6 /* OCFlickrRequest.m in Sources */,
+				178B53D81FE83EAB003469E6 /* OCFlickrServiceConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
