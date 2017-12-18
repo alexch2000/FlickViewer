@@ -12,6 +12,8 @@
 		178B53DC1FE83EF1003469E6 /* OCAsyncCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53DB1FE83EF1003469E6 /* OCAsyncCall.m */; };
 		178B53E01FE84015003469E6 /* OCFlickrRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53DF1FE84015003469E6 /* OCFlickrRequest.m */; };
 		178B53E31FE847E0003469E6 /* OCFlickrRequest+Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53E21FE847E0003469E6 /* OCFlickrRequest+Search.m */; };
+		178B53E91FE84932003469E6 /* OCGallery.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53E81FE84932003469E6 /* OCGallery.m */; };
+		178B53EC1FE849B3003469E6 /* OCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53EB1FE849B3003469E6 /* OCPhoto.m */; };
 		17FF487E1FE83CBC00193184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17FF48741FE83CBC00193184 /* Assets.xcassets */; };
 		17FF487F1FE83CBC00193184 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FF48751FE83CBC00193184 /* LaunchScreen.storyboard */; };
 		17FF48801FE83CBC00193184 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FF48771FE83CBC00193184 /* Main.storyboard */; };
@@ -30,6 +32,10 @@
 		178B53DF1FE84015003469E6 /* OCFlickrRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCFlickrRequest.m; sourceTree = "<group>"; };
 		178B53E11FE847E0003469E6 /* OCFlickrRequest+Search.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCFlickrRequest+Search.h"; sourceTree = "<group>"; };
 		178B53E21FE847E0003469E6 /* OCFlickrRequest+Search.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OCFlickrRequest+Search.m"; sourceTree = "<group>"; };
+		178B53E71FE84932003469E6 /* OCGallery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCGallery.h; sourceTree = "<group>"; };
+		178B53E81FE84932003469E6 /* OCGallery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCGallery.m; sourceTree = "<group>"; };
+		178B53EA1FE849B3003469E6 /* OCPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCPhoto.h; sourceTree = "<group>"; };
+		178B53EB1FE849B3003469E6 /* OCPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCPhoto.m; sourceTree = "<group>"; };
 		17FF485A1FE83C2200193184 /* FlickrViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FF486B1FE83C2200193184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17FF48741FE83CBC00193184 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,6 +98,31 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
+		178B53E41FE84916003469E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		178B53E51FE84916003469E6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		178B53E61FE84916003469E6 /* DOM */ = {
+			isa = PBXGroup;
+			children = (
+				178B53E71FE84932003469E6 /* OCGallery.h */,
+				178B53E81FE84932003469E6 /* OCGallery.m */,
+				178B53EA1FE849B3003469E6 /* OCPhoto.h */,
+				178B53EB1FE849B3003469E6 /* OCPhoto.m */,
+			);
+			path = DOM;
+			sourceTree = "<group>";
+		};
 		17FF48511FE83C2200193184 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +162,9 @@
 		17FF48791FE83CBC00193184 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				178B53E61FE84916003469E6 /* DOM */,
+				178B53E51FE84916003469E6 /* UI */,
+				178B53E41FE84916003469E6 /* ViewModel */,
 				178B53D11FE83E50003469E6 /* Networking */,
 				17FF487A1FE83CBC00193184 /* Application */,
 			);
@@ -218,8 +252,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178B53E91FE84932003469E6 /* OCGallery.m in Sources */,
 				178B53E31FE847E0003469E6 /* OCFlickrRequest+Search.m in Sources */,
 				178B53D51FE83E71003469E6 /* OCFlickrService.m in Sources */,
+				178B53EC1FE849B3003469E6 /* OCPhoto.m in Sources */,
 				178B53DC1FE83EF1003469E6 /* OCAsyncCall.m in Sources */,
 				17FF48821FE83CBC00193184 /* AppDelegate.m in Sources */,
 				17FF48811FE83CBC00193184 /* main.m in Sources */,
