@@ -36,6 +36,8 @@
 		178B53E81FE84932003469E6 /* OCGallery.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCGallery.m; sourceTree = "<group>"; };
 		178B53EA1FE849B3003469E6 /* OCPhoto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCPhoto.h; sourceTree = "<group>"; };
 		178B53EB1FE849B3003469E6 /* OCPhoto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCPhoto.m; sourceTree = "<group>"; };
+		178B53ED1FE84AEA003469E6 /* OCGalleryViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCGalleryViewModel.h; sourceTree = "<group>"; };
+		178B53EE1FE84B5A003469E6 /* OCPhotoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCPhotoViewModel.h; sourceTree = "<group>"; };
 		17FF485A1FE83C2200193184 /* FlickrViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FF486B1FE83C2200193184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17FF48741FE83CBC00193184 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +103,8 @@
 		178B53E41FE84916003469E6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				178B53ED1FE84AEA003469E6 /* OCGalleryViewModel.h */,
+				178B53EE1FE84B5A003469E6 /* OCPhotoViewModel.h */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
