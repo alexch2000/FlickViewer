@@ -12,6 +12,7 @@
 #import "OCGallery.h"
 #import "OCFlickrRequest+Search.h"
 #import "OCFlickrService.h"
+#import "OCPhoto.h"
 
 @interface OCGalleryViewModelImplementation()
 

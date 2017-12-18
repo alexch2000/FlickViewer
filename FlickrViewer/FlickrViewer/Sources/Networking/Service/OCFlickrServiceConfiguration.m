@@ -10,4 +10,14 @@
 
 @implementation OCFlickrServiceConfiguration
 
+- (instancetype)initWithAppToken:(NSString *)appToken {
+    NSParameterAssert(appToken);
+    self = [super init];
+    if (self) {
+        _appToken = appToken;
+    }
+    
+    return self;
+}
+
 @end
