@@ -8,10 +8,14 @@
 
 #import "OCImageProvider.h"
 #import "OCAsyncCall.h"
+#import "OCDiskCache.h"
+
 @interface OCImageProvider()
 
 @property (nonatomic) NSURLSession *URLSession;
 @property (nonatomic) NSCache *cache;
+@property (nonatomic) OCDiskCache *diskCache;
+
 
 @end
 
@@ -21,7 +25,7 @@
     self = [super init];
     if (self) {
         _URLSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-        
+        _diskCache = [OCDiskCache new];
         _cache = [[NSCache alloc] init];
         _cache.totalCostLimit = 100 * 1024 * 1024; // Limit on 100Mb;
     }
@@ -37,11 +41,10 @@
     return [self.cache objectForKey:URL];
 }
 
-
 - (OCAsyncCall * _Nonnull)loadImageForURL:(NSURL *)URL finishBlock:(void(^ _Nullable)(UIImage* result, NSError *error))finishBlock {
-    NSURLSessionDataTask *dataTask = [self.URLSession dataTaskWithURL:URL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    void(^localFinish)(NSData *data, NSError * error) = ^(NSData *data, NSError * error){
+        UIImage *image = [[UIImage alloc] initWithData:data];
         if (error == nil) {
-            UIImage *image = [[UIImage alloc] initWithData:data];
             if (finishBlock) {
                 finishBlock(image, nil);
             }
@@ -51,6 +54,16 @@
                 finishBlock(nil, error);
             }
         }
+    };
+    
+    if ([self.diskCache hasCacheForURL:URL]) {
+        [self.diskCache loadDataForURL:URL finishBlock:localFinish];
+        return nil;
+    }
+    
+    NSURLSessionDataTask *dataTask = [self.URLSession dataTaskWithURL:URL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        [self.diskCache cacheData:data forURL:URL];
+        localFinish(data, error);
     }];
     [dataTask resume];
     
