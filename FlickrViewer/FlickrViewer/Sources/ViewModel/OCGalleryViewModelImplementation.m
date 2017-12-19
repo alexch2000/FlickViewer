@@ -28,6 +28,8 @@
 @synthesize delegate = _delegate;
 @synthesize latestError = _latestError;
 
+@synthesize searchText = _searchText;
+
 - (instancetype)initWithSearchService:(OCFlickrService * _Nonnull)service {
     self = [super init];
     if (self) {
@@ -48,7 +50,7 @@
 - (void)newSearchForText:(NSString *)text {
     [self.latestSearch cancel];
     [self cleanupGallery];
-    
+    _searchText = [text copy];
     if (text.length > 0) {
         self.latestSearch = [self.service callForRequest:[OCFlickrRequest requestForText:text pageNumber:1] finishBlock:^(id  _Nonnull result, NSError * _Nonnull error) {
             [self parseData:result error:error];

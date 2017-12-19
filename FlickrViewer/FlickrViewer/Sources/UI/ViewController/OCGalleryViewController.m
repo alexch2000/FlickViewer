@@ -28,6 +28,7 @@ UICollectionViewDelegate
 @property (nonatomic) UICollectionView *collectionView;
 @property (nonatomic) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic) OCImageProvider *imageProvider;
+@property (nonatomic) UILabel *emptySearchResultsLabel;
 
 @end
 
@@ -55,8 +56,22 @@ UICollectionViewDelegate
     
     [self setupCollectionView];
     [self setupSearchController];
+    [self setupEmptyLabel];
 }
 
+- (void)setupEmptyLabel {
+    UILabel *label = [UILabel new];
+    label.translatesAutoresizingMaskIntoConstraints = NO;
+    label.text = NSLocalizedString(@"Enter text to find images", @"Enter text caption");
+    
+    [self.view addSubview:label];
+    [NSLayoutConstraint activateConstraints:@[
+                                              [label.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor],
+                                              [label.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor],
+                                              ]
+     ];
+    self.emptySearchResultsLabel = label;
+}
 
 - (void)setupCollectionView {
     [self setupFlowLayout];
@@ -135,6 +150,7 @@ UICollectionViewDelegate
 - (void)galleryViewModelDidStartNewSearch:(id<OCGalleryViewModel>)model {
     [self.collectionView setScrollsToTop:YES];
     [self.collectionView reloadData];
+    self.emptySearchResultsLabel.hidden = [model.searchText length] != 0;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

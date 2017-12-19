@@ -70,6 +70,7 @@
         } else {
             self.imageView.alpha = .0;
             self.activityIndicatorView.alpha = 1.0;
+            [self.activityIndicatorView startAnimating];
         }
     };
     if (animated) {

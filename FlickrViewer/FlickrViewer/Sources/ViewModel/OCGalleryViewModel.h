@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, readonly) NSArray< id<OCPhotoViewModel> >* photos;
 @property (nonatomic, nullable) NSError *latestError;
 
+@property (nonatomic, readonly, nullable) NSString *searchText;
+
 - (void)newSearchForText:(NSString * _Nullable)text;
 - (void)loadNextPage;
 
