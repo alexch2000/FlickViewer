@@ -17,7 +17,12 @@
 
 static NSString * const sReuseIdentifier = @"ReuseIdentifier";
 
-@interface OCGalleryViewController () <UICollectionViewDataSource, UISearchResultsUpdating, OCGalleryViewModelDelegate>
+@interface OCGalleryViewController () <
+UICollectionViewDataSource,
+UISearchResultsUpdating,
+OCGalleryViewModelDelegate,
+UICollectionViewDelegate
+>
 
 @property (nonatomic) UISearchController *searchImageController;
 @property (nonatomic) UICollectionView *collectionView;
@@ -48,13 +53,10 @@ static NSString * const sReuseIdentifier = @"ReuseIdentifier";
         self.navigationController.navigationBar.prefersLargeTitles = YES;
     }
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^(void){
-        self.navigationItem.hidesSearchBarWhenScrolling = YES;
-    });
-    
     [self setupCollectionView];
     [self setupSearchController];
 }
+
 
 - (void)setupCollectionView {
     [self setupFlowLayout];
@@ -63,6 +65,7 @@ static NSString * const sReuseIdentifier = @"ReuseIdentifier";
     collectionView.translatesAutoresizingMaskIntoConstraints = NO;
     
     collectionView.dataSource = self;
+    collectionView.delegate = self;
     
     [collectionView registerClass:[OCGalleryCollectionViewCell class] forCellWithReuseIdentifier:sReuseIdentifier];
     [self.view addSubview:collectionView];
@@ -132,6 +135,14 @@ static NSString * const sReuseIdentifier = @"ReuseIdentifier";
 - (void)galleryViewModelDidStartNewSearch:(id<OCGalleryViewModel>)model {
     [self.collectionView setScrollsToTop:YES];
     [self.collectionView reloadData];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSIndexPath *lastIndexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
+    NSInteger threshold = (NSInteger)( (double)self.galleryViewModel.photos.count * 0.6 );
+    if (lastIndexPath.row > threshold) {
+        [self.galleryViewModel loadNextPage];
+    }
 }
 
 @end

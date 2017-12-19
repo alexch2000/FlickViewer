@@ -22,12 +22,18 @@
     self.pagesCount = [jsonDictionary[@"pages"] integerValue];
     self.currentPage = [jsonDictionary[@"currentPage"] integerValue];
     
+    self.totalPhotosCount = [jsonDictionary[@"total"] integerValue];
+    
     NSMutableArray *photos = [NSMutableArray new];
     for (id dictionary in jsonDictionary[@"photo"]) {
         [photos addObject:[[OCPhoto alloc] initWithJSON:dictionary]];
     }
     
     [self appendPhotos:photos];
+}
+
+- (BOOL)hasMorePhoto {
+    return self.photos.count < self.totalPhotosCount;
 }
 
 @end

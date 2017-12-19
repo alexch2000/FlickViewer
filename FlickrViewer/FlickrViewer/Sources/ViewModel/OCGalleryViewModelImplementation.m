@@ -53,6 +53,7 @@
         self.latestSearch = [self.service callForRequest:[OCFlickrRequest requestForText:text pageNumber:1] finishBlock:^(id  _Nonnull result, NSError * _Nonnull error) {
             [self parseData:result error:error];
             self.gallery.searchText = text;
+            self.latestSearch = nil;
         }];
         
         
@@ -63,9 +64,10 @@
 }
 
 - (void)loadNextPage {
-    if (self.latestSearch != nil) {
+    if (self.gallery.hasMorePhoto && self.latestSearch == nil) {
         self.latestSearch = [self.service callForRequest:[OCFlickrRequest requestForText:self.gallery.searchText pageNumber:self.gallery.currentPage + 1] finishBlock:^(id  _Nonnull result, NSError * _Nonnull error) {
             [self parseData:result error:error];
+            self.latestSearch = nil;
         }];
     }
 }
