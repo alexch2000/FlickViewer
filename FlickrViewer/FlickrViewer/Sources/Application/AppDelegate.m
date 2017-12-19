@@ -8,18 +8,33 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+#import "OCGalleryViewController.h"
 
+#import "OCFlickrServiceConfiguration.h"
+#import "OCFlickrService.h"
+#import "OCFlickrRequest.h"
+#import "OCGalleryViewModelImplementation.h"
+#import "OCImageProvider.h"
+
+
+@interface AppDelegate ()
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    OCFlickrService *service = [[OCFlickrService alloc] initWithConfiguration:[[OCFlickrServiceConfiguration alloc] initWithAppToken:@"e68ffe5a9e85cad7156855c9bc6623ad"]];
+    OCGalleryViewModelImplementation *gallery = [[OCGalleryViewModelImplementation alloc] initWithSearchService:service];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    OCGalleryViewController *galleryController = [[OCGalleryViewController alloc] initWithViewModel:gallery imageProvider:[OCImageProvider new]];
+    UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController:galleryController];
+    
+    self.window.rootViewController = rootNavigationController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

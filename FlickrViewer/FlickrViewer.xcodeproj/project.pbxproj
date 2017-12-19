@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		175319CB1FE8F5270046AA1B /* OCImageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 175319CA1FE8F5270046AA1B /* OCImageProvider.m */; };
 		178B53D51FE83E71003469E6 /* OCFlickrService.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53D41FE83E71003469E6 /* OCFlickrService.m */; };
 		178B53D81FE83EAB003469E6 /* OCFlickrServiceConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53D71FE83EAB003469E6 /* OCFlickrServiceConfiguration.m */; };
 		178B53DC1FE83EF1003469E6 /* OCAsyncCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53DB1FE83EF1003469E6 /* OCAsyncCall.m */; };
@@ -15,6 +16,8 @@
 		178B53E91FE84932003469E6 /* OCGallery.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53E81FE84932003469E6 /* OCGallery.m */; };
 		178B53EC1FE849B3003469E6 /* OCPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53EB1FE849B3003469E6 /* OCPhoto.m */; };
 		178B53F11FE84BB9003469E6 /* OCGalleryViewModelImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53F01FE84BB9003469E6 /* OCGalleryViewModelImplementation.m */; };
+		178B53F61FE85159003469E6 /* OCGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53F51FE85159003469E6 /* OCGalleryViewController.m */; };
+		178B53F91FE85175003469E6 /* OCGalleryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53F81FE85175003469E6 /* OCGalleryCollectionViewCell.m */; };
 		17FF487E1FE83CBC00193184 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17FF48741FE83CBC00193184 /* Assets.xcassets */; };
 		17FF487F1FE83CBC00193184 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FF48751FE83CBC00193184 /* LaunchScreen.storyboard */; };
 		17FF48801FE83CBC00193184 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FF48771FE83CBC00193184 /* Main.storyboard */; };
@@ -23,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		175319C91FE8F5270046AA1B /* OCImageProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCImageProvider.h; sourceTree = "<group>"; };
+		175319CA1FE8F5270046AA1B /* OCImageProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCImageProvider.m; sourceTree = "<group>"; };
 		178B53D31FE83E71003469E6 /* OCFlickrService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCFlickrService.h; sourceTree = "<group>"; };
 		178B53D41FE83E71003469E6 /* OCFlickrService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCFlickrService.m; sourceTree = "<group>"; };
 		178B53D61FE83EAB003469E6 /* OCFlickrServiceConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCFlickrServiceConfiguration.h; sourceTree = "<group>"; };
@@ -41,6 +46,10 @@
 		178B53EE1FE84B5A003469E6 /* OCPhotoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCPhotoViewModel.h; sourceTree = "<group>"; };
 		178B53EF1FE84BB9003469E6 /* OCGalleryViewModelImplementation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCGalleryViewModelImplementation.h; sourceTree = "<group>"; };
 		178B53F01FE84BB9003469E6 /* OCGalleryViewModelImplementation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCGalleryViewModelImplementation.m; sourceTree = "<group>"; };
+		178B53F41FE85159003469E6 /* OCGalleryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCGalleryViewController.h; sourceTree = "<group>"; };
+		178B53F51FE85159003469E6 /* OCGalleryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCGalleryViewController.m; sourceTree = "<group>"; };
+		178B53F71FE85175003469E6 /* OCGalleryCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCGalleryCollectionViewCell.h; sourceTree = "<group>"; };
+		178B53F81FE85175003469E6 /* OCGalleryCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCGalleryCollectionViewCell.m; sourceTree = "<group>"; };
 		17FF485A1FE83C2200193184 /* FlickrViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FF486B1FE83C2200193184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17FF48741FE83CBC00193184 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,9 +71,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		175319C81FE8F5160046AA1B /* ImageProvider */ = {
+			isa = PBXGroup;
+			children = (
+				175319C91FE8F5270046AA1B /* OCImageProvider.h */,
+				175319CA1FE8F5270046AA1B /* OCImageProvider.m */,
+			);
+			path = ImageProvider;
+			sourceTree = "<group>";
+		};
 		178B53D11FE83E50003469E6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				175319C81FE8F5160046AA1B /* ImageProvider */,
 				178B53DD1FE8400A003469E6 /* Requests */,
 				178B53D91FE83EE6003469E6 /* AsyncCall */,
 				178B53D21FE83E50003469E6 /* Service */,
@@ -117,6 +136,8 @@
 		178B53E51FE84916003469E6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				178B53F21FE8514C003469E6 /* Cell */,
+				178B53F31FE8514C003469E6 /* ViewController */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -130,6 +151,24 @@
 				178B53EB1FE849B3003469E6 /* OCPhoto.m */,
 			);
 			path = DOM;
+			sourceTree = "<group>";
+		};
+		178B53F21FE8514C003469E6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				178B53F71FE85175003469E6 /* OCGalleryCollectionViewCell.h */,
+				178B53F81FE85175003469E6 /* OCGalleryCollectionViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		178B53F31FE8514C003469E6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				178B53F41FE85159003469E6 /* OCGalleryViewController.h */,
+				178B53F51FE85159003469E6 /* OCGalleryViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		17FF48511FE83C2200193184 = {
@@ -261,9 +300,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				175319CB1FE8F5270046AA1B /* OCImageProvider.m in Sources */,
 				178B53E91FE84932003469E6 /* OCGallery.m in Sources */,
+				178B53F91FE85175003469E6 /* OCGalleryCollectionViewCell.m in Sources */,
 				178B53E31FE847E0003469E6 /* OCFlickrRequest+Search.m in Sources */,
 				178B53D51FE83E71003469E6 /* OCFlickrService.m in Sources */,
+				178B53F61FE85159003469E6 /* OCGalleryViewController.m in Sources */,
 				178B53EC1FE849B3003469E6 /* OCPhoto.m in Sources */,
 				178B53DC1FE83EF1003469E6 /* OCAsyncCall.m in Sources */,
 				17FF48821FE83CBC00193184 /* AppDelegate.m in Sources */,
