@@ -155,7 +155,7 @@ UICollectionViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     NSIndexPath *lastIndexPath = [[self.collectionView indexPathsForVisibleItems] lastObject];
-    NSInteger threshold = (NSInteger)( (double)self.galleryViewModel.photos.count * 0.6 );
+    NSInteger threshold = MAX((NSInteger)( (double)self.galleryViewModel.photos.count * 0.6 ), self.galleryViewModel.photos.count - 100);
     if (lastIndexPath.row > threshold) {
         [self.galleryViewModel loadNextPage];
     }
