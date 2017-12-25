@@ -60,6 +60,7 @@ UICollectionViewDelegate
     [self setupCollectionView];
     [self setupSearchController];
     [self setupEmptyLabel];
+    [self setupDataSource:self.collectionView];
 }
 
 - (void)setupEmptyLabel {
@@ -81,20 +82,19 @@ UICollectionViewDelegate
     
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.flowLayout];
     collectionView.translatesAutoresizingMaskIntoConstraints = NO;
-    
     collectionView.delegate = self;
-    
-    [collectionView registerClass:[OCGalleryCollectionViewCell class] forCellWithReuseIdentifier:sReuseIdentifier];
+
     [self.view addSubview:collectionView];
-    
-    [collectionView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
-    [collectionView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
-    [collectionView.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
-    [collectionView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
+    [NSLayoutConstraint activateConstraints:@[
+                                            [collectionView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+                                            [collectionView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
+                                            [collectionView.topAnchor constraintEqualToAnchor:self.view.topAnchor],
+                                            [collectionView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor],
+                                            ]
+     ];
     
     self.collectionView = collectionView;
     self.collectionView.backgroundColor = [UIColor whiteColor];
-    [self setupDataSource:collectionView];
 }
 
 - (void)setupDataSource:(UICollectionView *)collectionView {
