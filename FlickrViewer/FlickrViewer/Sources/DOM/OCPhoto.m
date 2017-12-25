@@ -17,6 +17,11 @@
         _server = photoJSON[@"server"];
         _identifier = photoJSON[@"id"];
         _secret = photoJSON[@"secret"];
+        
+        NSAssert(_farm != nil, @"Invalid JSON data. Farm");
+        NSAssert(_server != nil, @"Invalid JSON data. Server");
+        NSAssert(_identifier != nil, @"Invalid JSON data. Identifier");
+        NSAssert(_secret != nil, @"Invalid JSON data. Secret");
     }
     
     return self;

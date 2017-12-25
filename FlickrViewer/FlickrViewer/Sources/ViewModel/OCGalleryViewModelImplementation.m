@@ -79,6 +79,7 @@
         if (self.gallery == nil) {
             self.gallery = [[OCGallery alloc] init];
         }
+        
         [self.gallery updateWithJSON:result[@"photos"]];
         if ([self.delegate respondsToSelector:@selector(galleryViewModel:didAppendPhotos:)]) {
             [self.delegate galleryViewModel:self didAppendPhotos:self.gallery.appendedPhotos];

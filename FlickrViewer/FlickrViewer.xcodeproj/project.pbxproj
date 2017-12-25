@@ -10,6 +10,8 @@
 		175319CB1FE8F5270046AA1B /* OCImageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 175319CA1FE8F5270046AA1B /* OCImageProvider.m */; };
 		177B9FD61FE9AD91007B0D24 /* OCDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 177B9FD51FE9AD91007B0D24 /* OCDiskCache.m */; };
 		177B9FDC1FF0F80A007B0D24 /* OCArrayCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 177B9FDB1FF0F80A007B0D24 /* OCArrayCollectionViewDataSource.m */; };
+		177B9FEE1FF16B10007B0D24 /* OCGalleryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 177B9FED1FF16B10007B0D24 /* OCGalleryTests.m */; };
+		177B9FF01FF16D69007B0D24 /* OCPhotoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 177B9FEF1FF16D69007B0D24 /* OCPhotoTests.m */; };
 		178B53D51FE83E71003469E6 /* OCFlickrService.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53D41FE83E71003469E6 /* OCFlickrService.m */; };
 		178B53D81FE83EAB003469E6 /* OCFlickrServiceConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53D71FE83EAB003469E6 /* OCFlickrServiceConfiguration.m */; };
 		178B53DC1FE83EF1003469E6 /* OCAsyncCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53DB1FE83EF1003469E6 /* OCAsyncCall.m */; };
@@ -27,6 +29,16 @@
 		17FF48821FE83CBC00193184 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17FF487D1FE83CBC00193184 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		177B9FE61FF16ACC007B0D24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 17FF48521FE83C2200193184 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 17FF48591FE83C2200193184;
+			remoteInfo = FlickrViewer;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		175319C91FE8F5270046AA1B /* OCImageProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCImageProvider.h; sourceTree = "<group>"; };
 		175319CA1FE8F5270046AA1B /* OCImageProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCImageProvider.m; sourceTree = "<group>"; };
@@ -34,6 +46,10 @@
 		177B9FD51FE9AD91007B0D24 /* OCDiskCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCDiskCache.m; sourceTree = "<group>"; };
 		177B9FDA1FF0F80A007B0D24 /* OCArrayCollectionViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCArrayCollectionViewDataSource.h; sourceTree = "<group>"; };
 		177B9FDB1FF0F80A007B0D24 /* OCArrayCollectionViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCArrayCollectionViewDataSource.m; sourceTree = "<group>"; };
+		177B9FE11FF16ACC007B0D24 /* FlickrViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		177B9FE51FF16ACC007B0D24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		177B9FED1FF16B10007B0D24 /* OCGalleryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCGalleryTests.m; sourceTree = "<group>"; };
+		177B9FEF1FF16D69007B0D24 /* OCPhotoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCPhotoTests.m; sourceTree = "<group>"; };
 		178B53D31FE83E71003469E6 /* OCFlickrService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCFlickrService.h; sourceTree = "<group>"; };
 		178B53D41FE83E71003469E6 /* OCFlickrService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCFlickrService.m; sourceTree = "<group>"; };
 		178B53D61FE83EAB003469E6 /* OCFlickrServiceConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCFlickrServiceConfiguration.h; sourceTree = "<group>"; };
@@ -67,6 +83,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		177B9FDE1FF16ACC007B0D24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		17FF48571FE83C2200193184 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -111,6 +134,32 @@
 				177B9FDB1FF0F80A007B0D24 /* OCArrayCollectionViewDataSource.m */,
 			);
 			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		177B9FE21FF16ACC007B0D24 /* FlickrViewerTests */ = {
+			isa = PBXGroup;
+			children = (
+				177B9FEC1FF16AF6007B0D24 /* ModelTests */,
+				177B9FEB1FF16AF6007B0D24 /* ViewModelTests */,
+				177B9FE51FF16ACC007B0D24 /* Info.plist */,
+			);
+			path = FlickrViewerTests;
+			sourceTree = "<group>";
+		};
+		177B9FEB1FF16AF6007B0D24 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		177B9FEC1FF16AF6007B0D24 /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				177B9FED1FF16B10007B0D24 /* OCGalleryTests.m */,
+				177B9FEF1FF16D69007B0D24 /* OCPhotoTests.m */,
+			);
+			path = ModelTests;
 			sourceTree = "<group>";
 		};
 		178B53D11FE83E50003469E6 /* Networking */ = {
@@ -208,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				17FF485C1FE83C2200193184 /* FlickrViewer */,
+				177B9FE21FF16ACC007B0D24 /* FlickrViewerTests */,
 				17FF485B1FE83C2200193184 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -216,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				17FF485A1FE83C2200193184 /* FlickrViewer.app */,
+				177B9FE11FF16ACC007B0D24 /* FlickrViewerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -266,6 +317,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		177B9FE01FF16ACC007B0D24 /* FlickrViewerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 177B9FE81FF16ACC007B0D24 /* Build configuration list for PBXNativeTarget "FlickrViewerTests" */;
+			buildPhases = (
+				177B9FDD1FF16ACC007B0D24 /* Sources */,
+				177B9FDE1FF16ACC007B0D24 /* Frameworks */,
+				177B9FDF1FF16ACC007B0D24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				177B9FE71FF16ACC007B0D24 /* PBXTargetDependency */,
+			);
+			name = FlickrViewerTests;
+			productName = FlickrViewerTests;
+			productReference = 177B9FE11FF16ACC007B0D24 /* FlickrViewerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		17FF48591FE83C2200193184 /* FlickrViewer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17FF48701FE83C2200193184 /* Build configuration list for PBXNativeTarget "FlickrViewer" */;
@@ -292,6 +361,11 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Oleksii Chopyk";
 				TargetAttributes = {
+					177B9FE01FF16ACC007B0D24 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 17FF48591FE83C2200193184;
+					};
 					17FF48591FE83C2200193184 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -312,11 +386,19 @@
 			projectRoot = "";
 			targets = (
 				17FF48591FE83C2200193184 /* FlickrViewer */,
+				177B9FE01FF16ACC007B0D24 /* FlickrViewerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		177B9FDF1FF16ACC007B0D24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		17FF48581FE83C2200193184 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,6 +412,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		177B9FDD1FF16ACC007B0D24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				177B9FF01FF16D69007B0D24 /* OCPhotoTests.m in Sources */,
+				177B9FEE1FF16B10007B0D24 /* OCGalleryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		17FF48561FE83C2200193184 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,6 +445,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		177B9FE71FF16ACC007B0D24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 17FF48591FE83C2200193184 /* FlickrViewer */;
+			targetProxy = 177B9FE61FF16ACC007B0D24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		17FF48751FE83CBC00193184 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -374,6 +473,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		177B9FE91FF16ACC007B0D24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EEYB32WB4N;
+				INFOPLIST_FILE = FlickrViewerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = oleksa.FlickrViewerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlickrViewer.app/FlickrViewer";
+			};
+			name = Debug;
+		};
+		177B9FEA1FF16ACC007B0D24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EEYB32WB4N;
+				INFOPLIST_FILE = FlickrViewerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = oleksa.FlickrViewerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlickrViewer.app/FlickrViewer";
+			};
+			name = Release;
+		};
 		17FF486E1FE83C2200193184 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -509,6 +638,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		177B9FE81FF16ACC007B0D24 /* Build configuration list for PBXNativeTarget "FlickrViewerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				177B9FE91FF16ACC007B0D24 /* Debug */,
+				177B9FEA1FF16ACC007B0D24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		17FF48551FE83C2200193184 /* Build configuration list for PBXProject "FlickrViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
