@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		175319CB1FE8F5270046AA1B /* OCImageProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 175319CA1FE8F5270046AA1B /* OCImageProvider.m */; };
 		177B9FD61FE9AD91007B0D24 /* OCDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 177B9FD51FE9AD91007B0D24 /* OCDiskCache.m */; };
+		177B9FDC1FF0F80A007B0D24 /* OCArrayCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 177B9FDB1FF0F80A007B0D24 /* OCArrayCollectionViewDataSource.m */; };
 		178B53D51FE83E71003469E6 /* OCFlickrService.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53D41FE83E71003469E6 /* OCFlickrService.m */; };
 		178B53D81FE83EAB003469E6 /* OCFlickrServiceConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53D71FE83EAB003469E6 /* OCFlickrServiceConfiguration.m */; };
 		178B53DC1FE83EF1003469E6 /* OCAsyncCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 178B53DB1FE83EF1003469E6 /* OCAsyncCall.m */; };
@@ -31,6 +32,8 @@
 		175319CA1FE8F5270046AA1B /* OCImageProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCImageProvider.m; sourceTree = "<group>"; };
 		177B9FD41FE9AD91007B0D24 /* OCDiskCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCDiskCache.h; sourceTree = "<group>"; };
 		177B9FD51FE9AD91007B0D24 /* OCDiskCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCDiskCache.m; sourceTree = "<group>"; };
+		177B9FDA1FF0F80A007B0D24 /* OCArrayCollectionViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCArrayCollectionViewDataSource.h; sourceTree = "<group>"; };
+		177B9FDB1FF0F80A007B0D24 /* OCArrayCollectionViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCArrayCollectionViewDataSource.m; sourceTree = "<group>"; };
 		178B53D31FE83E71003469E6 /* OCFlickrService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCFlickrService.h; sourceTree = "<group>"; };
 		178B53D41FE83E71003469E6 /* OCFlickrService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCFlickrService.m; sourceTree = "<group>"; };
 		178B53D61FE83EAB003469E6 /* OCFlickrServiceConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCFlickrServiceConfiguration.h; sourceTree = "<group>"; };
@@ -83,6 +86,31 @@
 				177B9FD51FE9AD91007B0D24 /* OCDiskCache.m */,
 			);
 			path = ImageProvider;
+			sourceTree = "<group>";
+		};
+		177B9FD71FF0F7F1007B0D24 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				177B9FD81FF0F7F1007B0D24 /* DataSources */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		177B9FD81FF0F7F1007B0D24 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				177B9FD91FF0F7F1007B0D24 /* UICollectionView */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		177B9FD91FF0F7F1007B0D24 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				177B9FDA1FF0F80A007B0D24 /* OCArrayCollectionViewDataSource.h */,
+				177B9FDB1FF0F80A007B0D24 /* OCArrayCollectionViewDataSource.m */,
+			);
+			path = UICollectionView;
 			sourceTree = "<group>";
 		};
 		178B53D11FE83E50003469E6 /* Networking */ = {
@@ -215,6 +243,7 @@
 		17FF48791FE83CBC00193184 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				177B9FD71FF0F7F1007B0D24 /* Misc */,
 				178B53E61FE84916003469E6 /* DOM */,
 				178B53E51FE84916003469E6 /* UI */,
 				178B53E41FE84916003469E6 /* ViewModel */,
@@ -315,6 +344,7 @@
 				178B53DC1FE83EF1003469E6 /* OCAsyncCall.m in Sources */,
 				17FF48821FE83CBC00193184 /* AppDelegate.m in Sources */,
 				17FF48811FE83CBC00193184 /* main.m in Sources */,
+				177B9FDC1FF0F80A007B0D24 /* OCArrayCollectionViewDataSource.m in Sources */,
 				178B53E01FE84015003469E6 /* OCFlickrRequest.m in Sources */,
 				177B9FD61FE9AD91007B0D24 /* OCDiskCache.m in Sources */,
 				178B53D81FE83EAB003469E6 /* OCFlickrServiceConfiguration.m in Sources */,

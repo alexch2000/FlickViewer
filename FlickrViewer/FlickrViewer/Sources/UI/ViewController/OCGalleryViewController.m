@@ -15,10 +15,11 @@
 #import "OCGalleryViewModel.h"
 #import "OCPhotoViewModel.h"
 
+#import "OCArrayCollectionViewDataSource.h"
+
 static NSString * const sReuseIdentifier = @"ReuseIdentifier";
 
 @interface OCGalleryViewController () <
-UICollectionViewDataSource,
 UISearchResultsUpdating,
 OCGalleryViewModelDelegate,
 UICollectionViewDelegate
@@ -29,6 +30,8 @@ UICollectionViewDelegate
 @property (nonatomic) UICollectionViewFlowLayout *flowLayout;
 @property (nonatomic) OCImageProvider *imageProvider;
 @property (nonatomic) UILabel *emptySearchResultsLabel;
+
+@property (nonatomic) OCArrayCollectionViewDataSource<OCGalleryCollectionViewCell *, id<OCPhotoViewModel>> *dataSource;
 
 @end
 
@@ -79,7 +82,6 @@ UICollectionViewDelegate
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.flowLayout];
     collectionView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    collectionView.dataSource = self;
     collectionView.delegate = self;
     
     [collectionView registerClass:[OCGalleryCollectionViewCell class] forCellWithReuseIdentifier:sReuseIdentifier];
@@ -92,6 +94,18 @@ UICollectionViewDelegate
     
     self.collectionView = collectionView;
     self.collectionView.backgroundColor = [UIColor whiteColor];
+    [self setupDataSource:collectionView];
+}
+
+- (void)setupDataSource:(UICollectionView *)collectionView {
+    _dataSource = [[OCArrayCollectionViewDataSource alloc] initWithCollectionView:collectionView
+                                                                  reuseIdentifier:sReuseIdentifier
+                                                                        cellClass:[OCGalleryCollectionViewCell class]
+                                                               configurationBlock:^(UICollectionViewCell * _Nonnull cell, id  <OCPhotoViewModel>_Nonnull object) {
+                                                                   OCGalleryCollectionViewCell *photoCell = (OCGalleryCollectionViewCell *)cell;
+                                                                   photoCell.imageProvider = self.imageProvider;
+                                                                   photoCell.imageURL = object.photoURL;
+                                                               }];
 }
 
 - (void)setupFlowLayout {
@@ -129,27 +143,13 @@ UICollectionViewDelegate
     [self.galleryViewModel newSearchForText:searchController.searchBar.text];
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.galleryViewModel.photos.count;
-}
-
-// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
-- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    OCGalleryCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:sReuseIdentifier forIndexPath:indexPath];
-    
-    cell.imageProvider = self.imageProvider;
-    cell.imageURL = self.galleryViewModel.photos[indexPath.row].photoURL;
-    
-    return cell;
-}
-
 - (void)galleryViewModel:(id<OCGalleryViewModel>)model didAppendPhotos:(NSArray<id<OCPhotoViewModel>> *)photos {
-    [self.collectionView reloadData];
+    self.dataSource.array = model.photos;
 }
 
 - (void)galleryViewModelDidStartNewSearch:(id<OCGalleryViewModel>)model {
     [self.collectionView setScrollsToTop:YES];
-    [self.collectionView reloadData];
+    self.dataSource.array = model.photos;
     self.emptySearchResultsLabel.hidden = [model.searchText length] != 0;
 }
 
