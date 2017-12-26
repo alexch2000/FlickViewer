@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OCCancelable.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OCAsyncCall : NSObject
+@interface OCAsyncCall : NSObject <OCCancelable>
 
 - (instancetype _Nonnull)initWithTask:(NSURLSessionTask *)taks;
 - (void)cancel;

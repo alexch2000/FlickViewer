@@ -9,11 +9,11 @@
 @import Foundation;
 #import "OCGalleryViewModel.h"
 
-@class OCFlickrService;
+@protocol OCUpdateService;
 
 @interface OCGalleryViewModelImplementation : NSObject <OCGalleryViewModel>
 
-- (instancetype _Nonnull)initWithSearchService:(OCFlickrService * _Nonnull)service;
+- (instancetype _Nonnull)initWithSearchService:(id<OCUpdateService> _Nonnull)service;
 
 @end
 

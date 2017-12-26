@@ -72,6 +72,8 @@
 		178B53F51FE85159003469E6 /* OCGalleryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCGalleryViewController.m; sourceTree = "<group>"; };
 		178B53F71FE85175003469E6 /* OCGalleryCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCGalleryCollectionViewCell.h; sourceTree = "<group>"; };
 		178B53F81FE85175003469E6 /* OCGalleryCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCGalleryCollectionViewCell.m; sourceTree = "<group>"; };
+		17E157521FF2AB16003B4CB4 /* OCUpdateService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCUpdateService.h; sourceTree = "<group>"; };
+		17E157551FF2AB2A003B4CB4 /* OCCancelable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCCancelable.h; sourceTree = "<group>"; };
 		17FF485A1FE83C2200193184 /* FlickrViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FF486B1FE83C2200193184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17FF48741FE83CBC00193184 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 		178B53E41FE84916003469E6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				17E157511FF2AAFC003B4CB4 /* Protocols */,
 				178B53ED1FE84AEA003469E6 /* OCGalleryViewModel.h */,
 				178B53EE1FE84B5A003469E6 /* OCPhotoViewModel.h */,
 				178B53EF1FE84BB9003469E6 /* OCGalleryViewModelImplementation.h */,
@@ -251,6 +254,15 @@
 				178B53F51FE85159003469E6 /* OCGalleryViewController.m */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		17E157511FF2AAFC003B4CB4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				17E157521FF2AB16003B4CB4 /* OCUpdateService.h */,
+				17E157551FF2AB2A003B4CB4 /* OCCancelable.h */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		17FF48511FE83C2200193184 = {

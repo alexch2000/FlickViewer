@@ -16,8 +16,8 @@
 
 @interface OCGalleryViewModelImplementation()
 
-@property (nonatomic) OCAsyncCall *latestSearch;
-@property (nonatomic) OCFlickrService *service;
+@property (nonatomic) id<OCCancelable> latestSearch;
+@property (nonatomic) id<OCUpdateService> service;
 
 @property (nonatomic) OCGallery *gallery;
 

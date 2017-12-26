@@ -7,17 +7,18 @@
 //
 
 @import Foundation;
+#import "OCUpdateService.h"
 @class OCFlickrServiceConfiguration, OCAsyncCall, OCFlickrRequest;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OCFlickrService : NSObject
+@interface OCFlickrService : NSObject <OCUpdateService>
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
 - (instancetype)initWithConfiguration:(OCFlickrServiceConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
-- (OCAsyncCall * _Nonnull)callForRequest:(OCFlickrRequest *)request finishBlock:(void(^ _Nullable)(id result, NSError *error))finishBlock;
+- (id<OCCancelable> _Nonnull)callForRequest:(OCFlickrRequest *)request finishBlock:(void(^ _Nullable)(id result, NSError *error))finishBlock;
 
 @end
 
